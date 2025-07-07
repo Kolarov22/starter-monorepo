@@ -1,0 +1,9 @@
+<section
+  class="flex flex-wrap flex-1 basis-1/3 items-center justify-center px-6 my-10 gap-3"
+>
+  @for(team of teams(); track team){
+  <app-team-block [team]="team"></app-team-block>
+  } @empty {
+  <p class="text-center text-gray-500">No teams available</p>
+  }
+</section>

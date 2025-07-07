@@ -1,0 +1,20 @@
+<div
+  class="bg-slate-900 rounded-2xl py-4 flex items-center justify-between gap-4 min-w-[450px] min-h-[200px] text-white"
+>
+  <div class="container flex flex-col items-center justify-center break-all">
+    <img ngSrc="{{ team()!.logo }}" alt="" width="150" height="100" />
+    <p class="flex">{{ team()!.name }} | {{ team()!.votes }} votes</p>
+  </div>
+  <div
+    class="container flex flex-col items-center justify-center text-center text-clip"
+  >
+    <p>{{ team()!.country }}</p>
+    <p>{{ team()!.league }}</p>
+    <p>{{ team()!.stadium }}</p>
+    <button
+      class="mt-10 bg-slate-100 text-black px-1 py-2 rounded-md hover:ring-purple-600 hover:ring-2 hover:bg-purple-600 hover:text-white transition duration-300"
+    >
+      <a routerLink="/teams/{{ team()!.name }}">Check the team</a>
+    </button>
+  </div>
+</div>
