@@ -5,5 +5,5 @@ export type Team = {
   league: string;
   stadium: string;
   votes: number;
-  players?: string[][];
+  players?: string[];
 };

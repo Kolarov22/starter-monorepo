@@ -15,7 +15,7 @@ const TeamSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
-  players: [[String]],
+  players: [String],
 });
 
 const Team = mongoose.model("Team", TeamSchema);
