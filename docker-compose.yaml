@@ -1,0 +1,38 @@
+services:
+  frontend:
+    image: angular-frontend
+    build: ./starter-frontend
+    container_name: angular-frontend
+    ports:
+      - "4200:4200"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+  backend:
+    image: node-backend
+    build: ./starter-backend
+    container_name: node-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - ATLAS_URI=mongodb://mongodb:27017/football_db
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data: {}
+
+networks:
+  app-network: {}
